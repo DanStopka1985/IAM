@@ -8,9 +8,12 @@ import (
 	_ "github.com/lib/pq"
 	ss "../settings"
 	rep "../reports"
+	l "../loader"
 )
 
 func main() {
+	l.Loader()
+
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/case1", rep.GetIEMK)
 	router.HandleFunc("/case1/lpu", rep.GetIemkLpuList)
@@ -34,4 +37,3 @@ func main() {
 
 	log.Fatal(http.ListenAndServe(":" + strconv.Itoa(ss.GetSettings().Port), router))
 }
-

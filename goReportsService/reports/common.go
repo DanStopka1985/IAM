@@ -57,33 +57,33 @@ func getRows(dbName string, query string) (*sql.Rows) {
 	var err error
 	if (dbName == "iemk"){
 		err = errIemkCon
-		p(err)
-		p(iemkDb.Ping())
-		p(err)
+		P(err)
+		P(iemkDb.Ping())
+		P(err)
 		rows, err := iemkDb.Query(query)
-		p(err)
+		P(err)
 		return rows
 	} else if (dbName == "appoint"){
 		err = errAppointCon
-		p(err)
-		p(appointDb.Ping())
-		p(err)
+		P(err)
+		P(appointDb.Ping())
+		P(err)
 		rows, err := appointDb.Query(query)
-		p(err)
+		P(err)
 		return rows
 	} else if (dbName == "queue"){
 		err = errQueueCon
-		p(err)
-		p(queueDb.Ping())
-		p(err)
+		P(err)
+		P(queueDb.Ping())
+		P(err)
 		rows, err := queueDb.Query(query)
-		p(err)
+		P(err)
 		return rows
 	}
 	return nil
 }
 
-func p(err error){
+func P(err error){
 	if err != nil {
 		panic(err)
 	}
