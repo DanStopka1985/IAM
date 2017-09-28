@@ -1,0 +1,23 @@
+body, html, .container-fluid { /// take all available height
+    height: 100%;
+}
+
+.myGrid {
+    width: 100%;
+    height: 380px;
+}
+
+#fromDt, #toDt, #rdt1, #rdt2, #vdt1, #vdt2, #dt1, #dt2, #reg_dt1, #reg_dt2 {
+    height: 30px;
+    width: 220px;
+}
+
+#reg_dt1, #reg_dt2, #ref_dt1, #ref_dt2 {
+    height: 30px;
+    width: 165px;
+}
+
+#src_lpu, #trg_lpu  {
+    height: 30px;
+    width: 220px;
+}

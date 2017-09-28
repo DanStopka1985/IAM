@@ -1,0 +1,21 @@
+{
+  "port": 8083,
+
+  "dbIemkHost": "localhost",
+  "dbIemkPort": 5432,
+  "dbIemkUser": "postgres",
+  "dbIemkPassword": "postgres",
+  "dbIemkName": "iemk",
+
+  "dbAppointHost": "localhost",
+  "dbAppointPort": 5432,
+  "dbAppointUser": "postgres",
+  "dbAppointPassword": "postgres",
+  "dbAppointName": "appoint",
+
+  "dbQueueHost": "localhost",
+  "dbQueuePort": 5432,
+  "dbQueueUser": "postgres",
+  "dbQueuePassword": "postgres",
+  "dbQueueName": "queue"
+}

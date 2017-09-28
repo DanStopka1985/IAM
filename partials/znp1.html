@@ -1,0 +1,77 @@
+<div class="container-fluid" ui-i18n={{lang}}>
+    <H4>Доступность первичной медицинской помощи</H4>
+    <div class="row-fluid columns">
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="rdt1" class="control-label">Период записи, начало:</label>
+                <div class="control">
+                    <input id="rdt1" ng-model="rdt1" type="date" ng-change="refreshClassifiers();" class="control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="rdt2" class="control-label">Период записи, окончание:</label>
+                <div class="control">
+                    <input id="rdt2" ng-model="rdt2" type="date" ng-change="refreshClassifiers();" class="control"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="vdt1" class="control-label">Период приема, начало:</label>
+                <div class="control">
+                    <input id="vdt1" ng-model="vdt1" type="date" ng-change="refreshClassifiers();" class="control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="vdt2" class="control-label">Период приема, окончание:</label>
+                <div class="control">
+                    <input id="vdt2" ng-model="vdt2" type="date" ng-change="refreshClassifiers();" class="control"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="lpu" class="control-label">ЛПУ:</label>
+                <div class="control">
+                    <select id="lpu" data-ng-model="lpu" data-ng-options="lpu.name for lpu in lpu_array" ng-change="refreshClassifiers('lpu');" class="control"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="district" class="control-label">Район ЛПУ:</label>
+                <div class="control">
+                    <select id="district" data-ng-model="district" data-ng-options="district.name for district in district_array" ng-change="refreshClassifiers('district');"></select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="spec" class="control-label">Специальность врача:</label>
+                <div class="control">
+                    <select id="spec" data-ng-model="spec" data-ng-options="spec.name for spec in spec_array" ng-change="refreshClassifiers('spec');"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                 <label class="control-label">&nbsp;</label>
+                 <div class="control">
+                    <button ng-click="refreshReport()" class="btn btn-default">Сформировать</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <div ui-grid="gridOptions" ui-grid-pagination class="myGrid" ui-grid-exporter></div>
+
+</div>

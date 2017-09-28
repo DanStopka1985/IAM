@@ -1,0 +1,60 @@
+<div class="container-fluid" ui-i18n={{lang}}>
+    <H4>Использование ИЭМК</H4>
+    <div class="row-fluid columns">
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="dt1" class="control-label">Дата начала периода:</label>
+                <div class="control">
+                    <input id="dt1" ng-model="dt1" type="date" ng-change="refreshClassifiers();" class="control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dt2" class="control-label">Дата окончания периода:</label>
+                <div class="control">
+                    <input id="dt2" ng-model="dt2" type="date" ng-change="refreshClassifiers();" class="control"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="lpu" class="control-label">ЛПУ:</label>
+                <div class="control">
+                    <select id="lpu" data-ng-model="lpu" data-ng-options="lpu.name for lpu in lpu_array" ng-change="refreshClassifiers('lpu');" class="control"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="district" class="control-label">Район ЛПУ:</label>
+                <div class="control">
+                    <select id="district" data-ng-model="district" data-ng-options="district.name for district in district_array" ng-change="refreshClassifiers('district');"></select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="caseType" class="control-label">Тип случая:</label>
+                <div class="control">
+                    <select id="caseType" data-ng-model="caseType" data-ng-options="caseType.name for caseType in caseType_array" ng-change="refreshClassifiers('caseType');"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="caseType" class="control-label">&nbsp;</label>
+                <div class="control">
+                    <button ng-click="refreshReport()" class="btn btn-default">Сформировать</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <div ui-grid="gridOptions" ui-grid-pagination class="myGrid" ui-grid-exporter></div>
+
+</div>

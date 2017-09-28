@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+
+<head>
+  <meta charset="utf-8">
+  <title ng-bind="title">ИАМ</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/mainCTRL.js"></script>
+  <script src="js/case1CTRL.js"></script>
+  <script src="js/znp1CTRL.js"></script>
+  <script src="js/ref1CTRL.js"></script>
+
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+  <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
+  <script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
+
+  <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
+  <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+
+  <script src="node_modules/angular-touch/angular-touch.js"></script>
+  <link rel="stylesheet" href="node_modules/bootstrap-2.3.2/css/bootstrap.min.css">
+  <script src="node_modules/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="node_modules/file-saver/FileSaver.min.js"></script>
+
+</head>
+
+<body>
+
+<div ng-app = "app" ng-controller = "reportCTRL" class="container-fluid">
+  <div class="row-fluid columns">
+    <div class="span2 article-tree">
+      <uib-tabset vertical="true" type="tabs">
+        <uib-tab index="0" heading="Использование ИЭМК" select="open('#!case1')"></uib-tab>
+        <uib-tab index="1" heading="Сводка по направлениям" select="open('#!ref1')"></uib-tab>
+        <uib-tab index="2" heading="Доступность первичной медицинской помощи" select="open('#!znp1')"></uib-tab>
+      </uib-tabset>
+    </div>
+    <div class="span10 content-area" style="border-left: 1px solid #ccc;">
+      <div ng-view></div>
+    </div>
+    </div>
+  </div>
+
+
+<!--todo каскадность параметров направлений-->
+<!--todo выгрузки-->
+<!--todo сохранение параметров для отчетов-->
+
+
+</body>
+</html>

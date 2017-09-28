@@ -1,0 +1,92 @@
+<div class="container-fluid" ui-i18n={{lang}}>
+    <H4>Сводка по направлениям</H4>
+    <div class="row-fluid columns">
+        <div class="span3 article-tree">
+
+            <div class="form-group">
+
+                <label for="reg_dt1" class="control-label">Период регистрации направления:</label>
+                <div class="control">
+                    <input id="reg_dt1" ng-model="reg_dt1" type="date" ng-change="refreshClassifiers();" class="control"/>
+                    -
+                    <input id="reg_dt2" ng-model="reg_dt2" type="date" ng-change="refreshClassifiers();" class="control"/>
+                </div>
+
+                <label for="ref_dt1" class="control-label">Период направления:</label>
+                <div class="control">
+                    <input id="ref_dt1" ng-model="ref_dt1" type="date" ng-change="refreshClassifiers();" class="control"/>
+                    -
+                    <input id="ref_dt2" ng-model="ref_dt2" type="date" ng-change="refreshClassifiers();" class="control"/>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="src_lpu" class="control-label">Направляющее ЛПУ:</label>
+                <div class="control">
+                    <select id="src_lpu" data-ng-model="src_lpu" data-ng-options="src_lpu.name for src_lpu in src_lpu_array" ng-change="refreshClassifiers('src_lpu');" class="control"></select>
+                </div>
+                <label for="src_lpu" class="control-label">Принимающее ЛПУ:</label>
+                <div class="control">
+                    <select id="trg_lpu" data-ng-model="trg_lpu" data-ng-options="trg_lpu.name for trg_lpu in trg_lpu_array" ng-change="refreshClassifiers('trg_lpu');" class="control"></select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="src_spec" class="control-label">Специальность направляющего:</label>
+                <div class="control">
+                    <select id="src_spec" data-ng-model="src_spec" data-ng-options="src_spec.name for src_spec in src_spec_array" ng-change="refreshClassifiers('src_spec');" class="control"></select>
+                </div>
+                <label for="trg_spec" class="control-label">Специальность принимающего:</label>
+                <div class="control">
+                    <select id="trg_spec" data-ng-model="trg_spec" data-ng-options="trg_spec.name for trg_spec in trg_spec_array" ng-change="refreshClassifiers('trg_spec');" class="control"></select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="src_pos" class="control-label">Должность направляющего:</label>
+                <div class="control">
+                    <select id="src_pos" data-ng-model="src_pos" data-ng-options="src_pos.name for src_pos in src_pos_array" ng-change="refreshClassifiers('src_pos');" class="control"></select>
+                </div>
+
+                <label for="district" class="control-label">Район ЛПУ:</label>
+                <div class="control">
+                    <select id="district" data-ng-model="district" data-ng-options="district.name for district in district_array" ng-change="refreshClassifiers('district');"></select>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="span2 article-tree">
+
+            <div class="form-group">
+                <label for="ref_type" class="control-label">Тип направления:</label>
+                <div class="control">
+                    <select id="ref_type" data-ng-model="ref_type" data-ng-options="ref_type.name for ref_type in ref_type_array" ng-change="refreshClassifiers('ref_type');"></select>
+                </div>
+                <label class="control-label">&nbsp;</label>
+                <div class="control">
+                    <button ng-click="refreshReport()" class="btn btn-default">Сформировать</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+        <div ui-grid="gridOptions" ui-grid-pagination class="myGrid"  ui-grid-exporter></div>
+
+</div>
